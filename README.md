@@ -35,7 +35,7 @@ If you want to test Facebook sharing from the `App Links` app then:
 2. Set the `fb:app_id` property to your Facebook app id.
 3. Deploy your changes to Parse Hosting.
 
-The canonical URL for your cat is https://<YOUR_PARSE_SUBDOMAIN>/cat.html. Note it for later use.
+The canonical URL for your cat is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note it for later use.
 
 ## The Dog
 
@@ -133,7 +133,7 @@ The canonical URL for your cat is https://<YOUR_PARSE_SUBDOMAIN>/cat.html. Note 
 
 1. Modify `ApLinks-Info.plist`
     + To use your Facebook app id in the `FacebookAppID` property.
-    + To use your Facebook app id in the `URL types > Item 0 > URL Schemes > Item 0` property, remember it should be fb<YOUR_APP_ID>.
+    + To use your Facebook app id in the `URL types > Item 0 > URL Schemes > Item 0` property, remember it should be fb[YOUR_APP_ID].
     + To use your Facebook display name in the `FacebookDisplayName` property.
     + To use the same bundle identifier set up on Facebook.
 2. Modify `ViewController.m` to use the canonical URLs you set up for the bird, cat, and dog.
@@ -151,7 +151,7 @@ The canonical URL for your cat is https://<YOUR_PARSE_SUBDOMAIN>/cat.html. Note 
 3. Click "Show me a Dog". This should open the `AppLinks` app to it's detail view controller to show an adorable dog, at least I think so. You should also see a link back to the `MeasureAppLinks` app on the top of the view.
 4. Click the back link.
 5. **Parse analytics:** Check your Parse Analytics dashboard. Go to Events. From the top drop down, select Custom Breakdown. From the side drop down, you should see `AppLinksOutbound` and `AppLinksInbound`. Select each in turn and you should see activity based on your test.
-6. **Facebook analytics**: Check your App Events page, (https://www.facebook.com/insights/<YOUR_FB_APP_ID>?section=AppEvents). You should see data for `bf_al_nav_in` and `bf_al_ref_back_out`.
+6. **Facebook analytics**: Check your App Events page, (https://www.facebook.com/insights/[YOUR_FB_APP_ID]?section=AppEvents). You should see data for `bf_al_nav_in` and `bf_al_ref_back_out`.
 
 # Images
 
