@@ -23,9 +23,18 @@ First clone this repository. Then set up Facebook and Parse apps.
 
 # App Links Data Setup
 
-In this section, you'll create the App Links metadata representing the content used in the apps. The Xcode projects contain links representing the canonical URLs I used. You'll replace these with ones your create.
+The Xcode projects contain links representing content that you should replace with your own.
 
-## The Cat
+## AppLinks App
+
+In this section, you'll create the App Links metadata representing content for the `AppLinks` app. You'll see two flavors in creating the content:
+
+  + Using [Parse Hosting](https://www.parse.com/docs/hosting_guide)
+  + Using the [Facebook's App Link Host API](https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_link_hosts)
+
+Either case shows how you could set things up if you don't have a backend web server.
+
+### The Cat
 
 The web page representing a cat can be found in your Cloud Code's folder, `public/cat.html`. 
 
@@ -35,9 +44,9 @@ If you want to test Facebook sharing from the `App Links` app then:
 2. Set the `fb:app_id` property to your Facebook app id.
 3. Deploy your changes to Parse Hosting.
 
-The canonical URL for your cat is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note it for later use.
+The canonical URL for your cat content is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note it for later use.
 
-## The Dog
+### The Dog
 
 1. Create the App Links metadata using [Facebook's App Link Host API](https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_link_hosts), example:
 
@@ -56,6 +65,8 @@ The canonical URL for your cat is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note 
   }'
 ```
 
+    Replace `FB_APP_ACCESS_TOKEN` with your Facebook app's access token. You can find it using the [Access Token Tool](https://developers.facebook.com/tools/access_token).
+    
     Sample response:
 
     ```json
@@ -82,7 +93,7 @@ The canonical URL for your cat is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note 
 
 3. Note the canonical URL for later use.
 
-## The Bird
+### The Bird
 
 1. Create the App Links metadata using [Facebook's App Link Host API](https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_link_hosts), example:
 
@@ -126,6 +137,13 @@ The canonical URL for your cat is https://[YOUR_PARSE_SUBDOMAIN]/cat.html. Note 
 ```
 
 3. Note the canonical URL for later use.
+
+## MeasureAppLinks App
+
+The content for the `MeasureAppLinks` app is generated dynamically using [Parse Hosting](https://www.parse.com/docs/hosting_guide#webapp), specifically using Express and the [App Links Cloud Module](https://www.parse.com/docs/cloud_modules_guide#applinks). This content was set up when you copied over the `CloudCode` folder's content and deployed it. The `cloud/app.js` file sets up the dynamic endpoints:
+
+  + Bird: https://[YOUR_PARSE_SUBDOMAIN]/bird
+  + Dog: https://[YOUR_PARSE_SUBDOMAIN]/dog
 
 # Xcode Setup
 
