@@ -1,6 +1,6 @@
 #Overview
 
-This is the demo used in the [AppLinks meetup](http://applinkshappyhour.splashthat.com/). The demo shows how you can set up App Links and use Bolts to trigger measurement events that are consumed by Facebook App Events and Parse Analytics.
+This is the demo used in the [AppLinks 2014 meetup](http://applinkshappyhour.splashthat.com/). The demo shows how you can set up App Links and use Bolts to trigger measurement events that are consumed by Facebook App Events and Parse Analytics.
 
 The repo contains three folders:
 
